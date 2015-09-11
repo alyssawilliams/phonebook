@@ -1,0 +1,64 @@
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-image: linear-gradient(
+		to bottom, #323663, #323663 80%, #83698C);
+ background-attachment: fixed;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 25px;
+	max-width: 600px;
+	min-width: 400px;
+}
+
+.headline {
+	text-align: center;
+	font-size: 2em;
+  color: $header-text;
+  margin: 20px 0 30px;
+}
+
+.tools {
+	margin: 15px 0 20px;
+	overflow: hidden;
+
+	i {
+		float: right;
+		color: darken(#ccc, 12%);
+		margin-left: 15px;
+		font-size: 1.1em;
+
+		&:hover { cursor: pointer; }
+
+		&.search:hover { color: rgba($header-text, 0.8); }
+		&.add:hover { color: lightgreen; }
+
+	}
+
+	.search-box {
+		width: 0;
+		height: 25px;
+		border: none;
+		color: $header-text;
+		float: right;
+		border-radius: 13px;
+	  background-color: transparent;
+	  text-align: right;
+	  font-size: 1.1em;
+
+	  -webkit-transition: background-color 0.5s ease-in-out, width 0.4s;
+
+	  &:focus { 
+	  	outline: none; 
+			width: 250px; 
+	  	background-color: rgba($header-text, 0.2);
+	  	padding: 5px 15px;
+
+	  	//TODO: Fix - input jumps when search is clicked and the cursor judders slightly when animating width
+	  }
+	}
+}

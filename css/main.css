@@ -1,0 +1,178 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(to bottom, #323663, #323663 80%, #83698C);
+  background-attachment: fixed; }
+
+.wrapper {
+  margin: 0 auto;
+  padding: 25px;
+  max-width: 600px;
+  min-width: 400px; }
+
+.headline {
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  margin: 20px 0 30px; }
+
+.tools {
+  margin: 15px 0 20px;
+  overflow: hidden; }
+  .tools i {
+    float: right;
+    color: #adadad;
+    margin-left: 15px;
+    font-size: 1.1em; }
+    .tools i:hover {
+      cursor: pointer; }
+    .tools i.search:hover {
+      color: rgba(255, 255, 255, 0.8); }
+    .tools i.add:hover {
+      color: lightgreen; }
+  .tools .search-box {
+    width: 0;
+    height: 25px;
+    border: none;
+    color: #fff;
+    float: right;
+    border-radius: 13px;
+    background-color: transparent;
+    text-align: right;
+    font-size: 1.1em;
+    -webkit-transition: background-color 0.5s ease-in-out, width 0.4s; }
+    .tools .search-box:focus {
+      outline: none;
+      width: 250px;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 5px 15px; }
+
+.card {
+  position: relative;
+  padding: 25px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: url(/imgs/arches.png);
+  margin: 50px 0;
+  height: 320px;
+  z-index: 1;
+  text-align: center; }
+  .card .bg {
+    height: 40%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center; }
+
+.delete {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  color: #b3b3b3; }
+  .delete:hover {
+    color: lightcoral; }
+
+.name {
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #1a7e76;
+  display: flex;
+  flex: 1;
+  margin: 10% 10px 0; }
+  .name.first {
+    justify-content: flex-end; }
+
+.long-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 0; }
+
+.pic {
+  margin-top: 75px; }
+  .pic img {
+    border-radius: 50%;
+    border: 7px solid #fff;
+    width: 120px;
+    height: 120px; }
+
+.info-wrapper {
+  margin-top: 160px; }
+
+.line {
+  margin: 20px 0; }
+  .line a {
+    text-decoration: none;
+    color: inherit; }
+    .line a:hover {
+      color: #1a7e76; }
+  .line i:before {
+    font-weight: 900;
+    font-size: 18px; }
+  .line p {
+    display: inline;
+    margin-left: 2.5%; }
+
+@media screen and (max-width: 515px) {
+  .name {
+    font-size: 1.6em; } }
+@media screen and (max-width: 450px) {
+  .name {
+    font-size: 1.3em; } }
+
+/*# sourceMappingURL=main.css.map */

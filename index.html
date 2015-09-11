@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonebookApp" ng-controller="phonebookCtrl">
+
+<head>
+	<meta charset="UTF-8">
+	<title ng-bind="title">Contacts</title>
+
+	 <link rel="stylesheet" href="/css/main.css">
+	 <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="wrapper">	
+		<h2 class="headline" ng-cloak>My Contacts ({{filtered.length}})</h2>
+
+		<div class="tools">
+			<i class="fa fa-plus add" data-toggle="tooltip" title="Add a contact" ng-click="add()"></i>
+			<label for="search"><i class="fa fa-search search"></i></label>
+			<input type="text" class="search-box" id="search" ng-model="search" autocomplete="off" ng-blur="search=''" ng-model-options="{ debounce: { 'default': 500 } }" />
+		</div>
+
+		<div class="card" ng-repeat="contact in filtered = (contacts | filter:search)">
+
+			<div class="bg">
+				<div class="delete" data-toggle="tooltip" title="Delete this contact" ng-click="delete($index)">
+					<i class="fa fa-times"></i>
+				</div>
+
+				<div class="name first" ng-cloak>{{ contact.firstName}}</div>
+				<div class="pic"><img ng-src="{{contact.img}}" /></div>
+				<div class="name last" ng-class="{ 'long-name': longName(contact.lastName) }" ng-cloak>{{ contact.lastName  }}</div>
+				<!-- TODO: On hover, animate scrolling text -->
+			</div>
+
+			<div class="info-wrapper">
+				<div class="line">
+					<a ng-href="tel:+{{ contact.number }}">
+						<i class="fa fa-phone"></i>
+						<p>{{ contact.number }}</p>
+					</a>
+				</div>
+
+				<div class="line">
+					<a ng-href="mailto:{{ contact.email }}" target="_self">
+						<i class="fa fa-envelope-o"></i>
+						<p>{{ contact.email }}</p>
+					</a>
+				</div>
+
+				<div class="line">
+					<a ng-href="https://www.google.com/maps/place/{{ getLink(contact.address) }}">
+						<i class="fa fa-home"></i>
+						<p>{{ contact.address }}</p>
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script src="/js/phonebook.js"></script>
+
+</body>
+</html>

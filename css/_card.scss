@@ -1,0 +1,23 @@
+.card {
+	position: relative;
+	padding: 25px 15px;
+	background-color: rgba(#fff, 0.9);
+	background-image: url(/imgs/arches.png);
+	margin: 50px 0;
+	height: 320px;
+	z-index: 1;
+	text-align: center;
+
+	//TODO: Animate card slide up or fade out when searching
+
+	.bg {
+	  height: 40%;
+	  width: 100%;
+	  background-color: rgba(#000, .1);
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+		display: flex;
+		align-items: center;
+	}
+}
